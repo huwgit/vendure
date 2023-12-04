@@ -1,0 +1,11 @@
+<vdr-card title="Round Off Payment" *ngIf="entity$ | async as entity" style="padding-top: 3%; padding-bottom: 5%;">
+    <form [formGroup]="form">
+        <vdr-form-field [label]="'Amount'" for="amount">
+            <vdr-currency-input formControlName="amount" [currencyCode]="entity.currencyCode"></vdr-currency-input>
+        </vdr-form-field>
+    </form>
+    <br/>
+    <button type="submit" (click)="submit()" class="btn btn-primary" [disabled]="form.invalid || form.pristine">
+        Round Off Payment
+    </button>
+</vdr-card>
