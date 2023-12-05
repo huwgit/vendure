@@ -2,7 +2,8 @@ backups
 node_modules
 admin-ui/*
 !admin-ui/dist
-static
+static/assets
+static/email/test-emails
 *.sqlite*
 invoices
 .env
