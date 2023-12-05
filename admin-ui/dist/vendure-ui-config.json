@@ -1,0 +1,31 @@
+{
+  "adminApiPath": "admin-api",
+  "apiHost": "auto",
+  "apiPort": "auto",
+  "tokenMethod": "cookie",
+  "authTokenHeaderKey": "vendure-auth-token",
+  "channelTokenKey": "vendure-token",
+  "defaultLanguage": "en",
+  "availableLanguages": [
+    "he",
+    "ar",
+    "de",
+    "en",
+    "es",
+    "pl",
+    "zh_Hans",
+    "zh_Hant",
+    "pt_BR",
+    "pt_PT",
+    "cs",
+    "fr",
+    "ru",
+    "uk",
+    "it",
+    "fa",
+    "ne",
+    "hr"
+  ],
+  "hideVendureBranding": false,
+  "hideVersion": false
+}

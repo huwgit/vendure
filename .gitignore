@@ -1,0 +1,9 @@
+backups
+node_modules
+dist
+admin-ui/*
+!admin-ui/dist
+static
+*.sqlite*
+invoices
+.env
