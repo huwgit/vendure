@@ -22,6 +22,7 @@ import { RoundOffPaymentPlugin } from "./plugins/roundOffPayment/roundOff-paymen
 import { customAdminUi } from "./custom-admin-ui/compile-admin-ui";
 import { MigrationV2Plugin } from "@vendure/migrate-v2";
 import { PartialPaymentPlugin } from "./plugins/partialPayments/partial-payment.plugin";
+import { StocksPlugin } from "./plugins/stocks/stocks.plugin";
 
 const IS_DEV = process.env.APP_ENV === "dev";
 const UI_DEV = process.env.UI_ENV === "dev";
@@ -204,5 +205,6 @@ export const config: VendureConfig = {
     StripePlugin.init({
       storeCustomersInStripe: true,
     }),
+    StocksPlugin
   ],
 };

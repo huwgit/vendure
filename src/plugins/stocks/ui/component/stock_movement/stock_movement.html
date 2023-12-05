@@ -1,0 +1,32 @@
+<vdr-card [title]="'Stock Movements'" [paddingX]="false" class="mb-2">
+    <vdr-data-table-2 id="movement-list" [items]="(movements$ | async)?.items" [itemsPerPage]="movementsPerPage"
+        [totalItems]="movementsCount$ | async" [currentPage]="currentMovementsPage"
+        (itemsPerPageChange)="setMovementItemsPerPage($event)" (pageChange)="setMovementCurrentPage($event)">
+        <vdr-dt2-column id="id" [heading]="'common.id' | translate" [hiddenByDefault]="true">
+            <ng-template let-movement="item"> {{ movement.id }} </ng-template>
+        </vdr-dt2-column>
+        <vdr-dt2-column id="created-at" [heading]="'common.created-at' | translate" [hiddenByDefault]="false"
+            [optional]="false">
+            <ng-template let-movement="item">
+                {{ movement.createdAt | localeDate : 'short' }}
+            </ng-template>
+        </vdr-dt2-column>
+        <vdr-dt2-column id="type" [heading]="'Type'" [hiddenByDefault]="false">
+            <ng-template let-movement="item">
+                <vdr-chip [colorFrom]="movement.type">{{ movement.type }}</vdr-chip>
+            </ng-template>
+        </vdr-dt2-column>
+        <vdr-dt2-column id="quantity" [heading]="'Quantity'" [hiddenByDefault]="false">
+            <ng-template let-movement="item">{{movement.quantity}}</ng-template>
+        </vdr-dt2-column>
+        <vdr-dt2-column heading="Order" [optional]="false">
+            <ng-template let-movement="item">
+                <a class="button-ghost" *ngIf="movement.orderLine?.order?.id"
+                    [routerLink]="['/orders', movement.orderLine.order.id]">
+                    <span>{{ movement.orderLine.order.code }}</span>
+                    <clr-icon shape="arrow right"></clr-icon>
+                </a>
+            </ng-template>
+        </vdr-dt2-column>
+    </vdr-data-table-2>
+</vdr-card>

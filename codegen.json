@@ -1,0 +1,30 @@
+{
+    "overwrite": true,
+    "config": {
+        "strict": true,
+        "namingConvention": {
+            "typeNames": "pascal-case#pascalCase",
+            "enumValues": "keep"
+        },
+        "scalars": {
+            "ID": "string",
+            "Money": "number"
+        },
+        "maybeValue": "T"
+    },
+    "generates": {
+        "src/codegen/shopTypes.ts": {
+            "schema": "http://localhost:3000/shop-api",
+            "plugins": ["typescript", "typescript-operations"]
+        },
+        "src/codegen/adminTypes.ts": {
+            "schema": "http://localhost:3000/admin-api",
+            "plugins": ["typescript", "typescript-operations"]
+        },
+        "src/plugins/stocks/ui/generated-types.ts": {
+            "schema": "http://localhost:3000/admin-api",
+            "documents": "src/plugins/stocks/ui/queries.ts",
+            "plugins": ["typescript", "typescript-operations", "typed-document-node"]
+        }
+    }
+}

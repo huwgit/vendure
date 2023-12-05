@@ -3,6 +3,7 @@ import * as path from "path";
 import { RoundOffPaymentPlugin } from "../plugins/roundOffPayment/roundOff-payment.plugin";
 import { InvoicePlugin } from "@pinelab/vendure-plugin-invoices";
 import { PartialPaymentPlugin } from "../plugins/partialPayments/partial-payment.plugin";
+import { StocksPlugin } from "../plugins/stocks/stocks.plugin";
 
 if (require.main === module) {
   customAdminUi({ recompile: true, devMode: false })
@@ -26,6 +27,7 @@ export function customAdminUi(options: {
         RoundOffPaymentPlugin.uiExtension,
         PartialPaymentPlugin.uiExtension,
         InvoicePlugin.ui,
+        StocksPlugin.uiExtension,
         setBranding({}),
       ],
       devMode: options.devMode,
