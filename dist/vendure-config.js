@@ -19,6 +19,7 @@ const roundOff_payment_plugin_1 = require("./plugins/roundOffPayment/roundOff-pa
 const compile_admin_ui_1 = require("./custom-admin-ui/compile-admin-ui");
 const migrate_v2_1 = require("@vendure/migrate-v2");
 const partial_payment_plugin_1 = require("./plugins/partialPayments/partial-payment.plugin");
+const stocks_plugin_1 = require("./plugins/stocks/stocks.plugin");
 const IS_DEV = process.env.APP_ENV === "dev";
 const UI_DEV = process.env.UI_ENV === "dev";
 class TestOrderByCodeAccessStrategy {
@@ -193,5 +194,6 @@ exports.config = {
         stripe_1.StripePlugin.init({
             storeCustomersInStripe: true,
         }),
+        stocks_plugin_1.StocksPlugin
     ],
 };

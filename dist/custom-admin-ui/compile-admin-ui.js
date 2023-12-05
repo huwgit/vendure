@@ -30,6 +30,7 @@ const path = __importStar(require("path"));
 const roundOff_payment_plugin_1 = require("../plugins/roundOffPayment/roundOff-payment.plugin");
 const vendure_plugin_invoices_1 = require("@pinelab/vendure-plugin-invoices");
 const partial_payment_plugin_1 = require("../plugins/partialPayments/partial-payment.plugin");
+const stocks_plugin_1 = require("../plugins/stocks/stocks.plugin");
 if (require.main === module) {
     (_b = (_a = customAdminUi({ recompile: true, devMode: false })).compile) === null || _b === void 0 ? void 0 : _b.call(_a).then(() => {
         process.exit(0);
@@ -46,6 +47,7 @@ function customAdminUi(options) {
                 roundOff_payment_plugin_1.RoundOffPaymentPlugin.uiExtension,
                 partial_payment_plugin_1.PartialPaymentPlugin.uiExtension,
                 vendure_plugin_invoices_1.InvoicePlugin.ui,
+                stocks_plugin_1.StocksPlugin.uiExtension,
                 (0, compiler_1.setBranding)({}),
             ],
             devMode: options.devMode,
