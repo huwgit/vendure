@@ -4,15 +4,15 @@ This project was generated with [`@vendure/create`](https://github.com/vendure-e
 
 Useful links:
 
-- [Vendure docs](https://www.vendure.io/docs)
-- [Vendure Discord community](https://www.vendure.io/community)
-- [Vendure on GitHub](https://github.com/vendure-ecommerce/vendure)
-- [Vendure plugin template](https://github.com/vendure-ecommerce/plugin-template)
+-   [Vendure docs](https://www.vendure.io/docs)
+-   [Vendure Discord community](https://www.vendure.io/community)
+-   [Vendure on GitHub](https://github.com/vendure-ecommerce/vendure)
+-   [Vendure plugin template](https://github.com/vendure-ecommerce/plugin-template)
 
 ## Directory structure
 
-* `/src` contains the source code of your Vendure server. All your custom code and plugins should reside here.
-* `/static` contains static (non-code) files such as assets (e.g. uploaded images) and email templates.
+-   `/src` contains the source code of your Vendure server. All your custom code and plugins should reside here.
+-   `/static` contains static (non-code) files such as assets (e.g. uploaded images) and email templates.
 
 ## Development
 
@@ -67,17 +67,17 @@ docker run -dp 3000:3000 -e "DB_HOST=host.docker.internal" --name vendure-worker
 
 Here is a breakdown of the command used above:
 
-- `docker run` - run the image we created with `docker build`
-- `-dp 3000:3000` - the `-d` flag means to run in "detached" mode, so it runs in the background and does not take
-control of your terminal. `-p 3000:3000` means to expose port 3000 of the container (which is what Vendure listens
-on by default) as port 3000 on your host machine.
-- `-e "DB_HOST=host.docker.internal"` - the `-e` option allows you to define environment variables. In this case we
-are setting the `DB_HOST` to point to a special DNS name that is created by Docker desktop which points to the IP of
-the host machine. Note that `host.docker.internal` only exists in a Docker Desktop environment and thus should only be
-used in development.
-- `--name vendure-server` - we give the container a human-readable name.
-- `vendure` - we are referencing the tag we set up during the build.
-- `npm run start:server` - this last part is the actual command that should be run inside the container.
+-   `docker run` - run the image we created with `docker build`
+-   `-dp 3000:3000` - the `-d` flag means to run in "detached" mode, so it runs in the background and does not take
+    control of your terminal. `-p 3000:3000` means to expose port 3000 of the container (which is what Vendure listens
+    on by default) as port 3000 on your host machine.
+-   `-e "DB_HOST=host.docker.internal"` - the `-e` option allows you to define environment variables. In this case we
+    are setting the `DB_HOST` to point to a special DNS name that is created by Docker desktop which points to the IP of
+    the host machine. Note that `host.docker.internal` only exists in a Docker Desktop environment and thus should only be
+    used in development.
+-   `--name vendure-server` - we give the container a human-readable name.
+-   `vendure` - we are referencing the tag we set up during the build.
+-   `npm run start:server` - this last part is the actual command that should be run inside the container.
 
 ### Docker compose
 
